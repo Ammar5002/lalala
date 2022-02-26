@@ -46,7 +46,12 @@ async def ytdl(format: str, link: str):
     return 0, stderr
 
 
-@Client.on_message(command(["شغل", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["شغل", f"play@{BOT_USERNAME}"]) & other_filters
+)
+@checker
+@logging
+@PermissionCheck
+@AssistantAdd
 async def play(_, message: Message):
     await message.delete()
     # I Can See You !!
