@@ -57,19 +57,6 @@ async def play(c: Client, m: Message):
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
         await message.reply_text('- اشترك بقناة البوت لتستطيع تشغيل الاغاني  .',
                                  reply_markup=reply_markup03)
-            else:
-
-        if message.chat.id not in db_mem:
-
-            db_mem[message.chat.id] = {}
-
-        if message.sender_chat:
-
-            return await message.reply_text(
-
-                "انت لست  مشرف في المجموعه!\nيجب انت تكون مشرف مع بعض الصلاحيات."
-
-            )
     replied = m.reply_to_message
     chat_id = m.chat.id
     user_id = m.from_user.id
