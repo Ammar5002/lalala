@@ -93,7 +93,7 @@ async def start_(client: Client, message: Message):
 
 
 @Client.on_message(
-    command(["سورس", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["alaive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def alive(c: Client, message: Message):
     chat_id = message.chat.id
