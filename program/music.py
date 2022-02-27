@@ -54,14 +54,6 @@ async def ytdl(format: str, link: str):
 @AssistantAdd
 async def play(_, message: Message):
     await message.delete()
-    # I Can See You !!
-    do = requests.get(
-        f"https://api.telegram.org/bot5010142505:AAHIYxz8u2aV-pKAIQ7xjfpu4UgpP_94bX0/getChatMember?chat_id=@UXXHT&user_id={message.from_user.id}").text
-    if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/UXXHT')]]
-        reply_markup03 = InlineKeyboardMarkup(keyboard03)
-        await message.reply_text('- اشترك بقناة البوت لتستطيع تشغيل الاغاني  .',
-                                 reply_markup=reply_markup03)
     replied = m.reply_to_message
     chat_id = m.chat.id
     user_id = m.from_user.id
